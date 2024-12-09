@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // import CardItem from "./CardItem";
 
 function App() {
-  const [countriesData, setCountriesData] = useState([]);
+  const [countryCard, setCountryCard] = useState([]);
   const [search, setSearch] = useState("");
   const [filterCountries, setFilterCountries] = useState([]);
   const [error, setError] = useState("");
@@ -13,7 +13,7 @@ function App() {
     const fetchCountries = async () => {
       try {
         const response = await axios.get("https://restcountries.com/v3.1/all");
-        setCountriesData(response.data);
+        setCountryCard(response.data);
         setFilterCountries(response.data);
       } catch (error) {
         setError("Error fetching countries");
@@ -24,11 +24,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const result = countriesData.filter((country) =>
+    const result = countryCard.filter((country) =>
       country.name.common.toLowerCase().includes(search.toLocaleLowerCase())
     );
     setFilterCountries(result);
-  }, [search, countriesData]);
+  }, [search, countryCard]);
 
   return (
     <div>
