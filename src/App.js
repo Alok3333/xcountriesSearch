@@ -13,6 +13,7 @@ function App() {
     const fetchCountries = async () => {
       try {
         const response = await axios.get("https://restcountries.com/v3.1/all");
+        // console.log(response, "api data");
         setCountryCard(response.data);
         setFilterCountries(response.data);
       } catch (error) {

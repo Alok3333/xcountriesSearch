@@ -20,16 +20,23 @@ input {
 
 .searchCountries {
   border-radius: 0%;
-  border-style: outset;
-  padding-left: 20%;
+  /* border-style: outset; */
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  /* padding-left: 20%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .countryGrid {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  /* justify-content: center;  */
   gap: 20px;
-  padding: .90%;
+  padding-top: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 20px;
   border-radius: 20%;
   border-radius: 25px;
 }
