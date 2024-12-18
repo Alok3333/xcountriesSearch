@@ -4,32 +4,32 @@ import { useEffect, useState } from "react";
 // import CardItem from "./CardItem";
 
 function App() {
-  const [countryCard, setCountryCard] = useState([]);
+  const [countriesData, setCountriesData] = useState([]);
   const [search, setSearch] = useState("");
   const [filterCountries, setFilterCountries] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await axios.get("https://restcountries.com/v3.1/all");
-        // console.log(response, "api data");
-        setCountryCard(response.data);
-        setFilterCountries(response.data);
-      } catch (error) {
-        setError("Error fetching countries");
-        console.error("API Error:", error.message);
-      }
-    };
     fetchCountries();
   }, []);
 
+  const fetchCountries = async () => {
+    try {
+      const response = await axios.get("https://restcountries.com/v3.1/all");
+      setCountriesData(response.data);
+      setFilterCountries(response.data);
+    } catch (error) {
+      setError("Error fetching countries");
+      console.error("API Error:", error.message);
+    }
+  };
+
   useEffect(() => {
-    const result = countryCard.filter((country) =>
+    const result = countriesData.filter((country) =>
       country.name.common.toLowerCase().includes(search.toLocaleLowerCase())
     );
     setFilterCountries(result);
-  }, [search, countryCard]);
+  }, [search, countriesData]);
 
   return (
     <div>
