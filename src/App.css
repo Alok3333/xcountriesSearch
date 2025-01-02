@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-input {
+input{
   margin: 20px 0;
   padding: 10px;
   width: 800px;
@@ -18,30 +18,23 @@ input {
 
 }
 
-.searchCountries {
+.searchCountries{
   border-radius: 0%;
-  /* border-style: outset; */
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-  /* padding-left: 20%; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-style: outset;
+  padding-left: 20%;
 }
 
 .countryGrid {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center;  */
+  /* justify-content: center; */
   gap: 20px;
-  padding-top: 30px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 20px;
+  padding: .90%;
   border-radius: 20%;
   border-radius: 25px;
 }
 
-.countryCard {
+.countryCard{
   border: 1px solid #ccc;
   padding: 20px;
   width: 150px;
@@ -59,7 +52,7 @@ input {
   margin-bottom: 10px;
 }
 
-p {
+p{
   font-weight: 500;
 }
 
@@ -88,7 +81,6 @@ p {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
